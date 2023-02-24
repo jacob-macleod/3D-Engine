@@ -12,5 +12,8 @@ c = x or y position of camera
 p = x or y position of point
 r = resultant x or y position of point
 
-r=xtan\left(180-tan^{-1}\left(\frac{d}{\left|c-p\right|}\right)\right)+p
+        /          - 1/    d   \ \     
+r = xtan|180 - tan    |--------| | + p 
+        \             \|c - p| / /     
+
 `
