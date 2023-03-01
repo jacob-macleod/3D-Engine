@@ -21,7 +21,10 @@ This 3D engine was originally based on some mathematics which I derived. Below, 
 
 
 `         /          - 1/    d   \ \` 
+
+
 `r = xtan|180 - tan    |--------| | + p ` 
+
 `         \             \|c - p| / / `  
 
 However, this approach had a number of problems:
