@@ -1,26 +1,37 @@
 # Render scene
-import pygame
+import curses 
 from maths import *
 
-distance_between_screen_and_camera = 10
+# Set up the screen
+screen = curses.initscr()
 
-pygame.init()
+try :
+    # Set up the page
+    screen.border(0)
+    curses.start_color()
+    # Set up the red color
+    curses.init_color(10, 1000, 0, 0)
+    # Set up the color pair
+    curses.init_pair(1, curses.COLOR_WHITE, 10)
 
-white = (255,255,255)
-black = (0,0,0)
+    screen.addstr(10, 10, '█')
 
-red = (255,0,0)
-green = (0,255,0)
-blue = (0,0,255)
+    
+    height, width = screen.getmaxyx()
 
-gameDisplay = pygame.display.set_mode((800,600))
-while True:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            quit()
-    for j in range(0, 10) :
-        i = 10-j
-        x = find_point(100, 50, 10*j)
-        y = find_point(100, 60, 10*j)
-    pygame.display.update()
+    # Calculate slope and y-intercept
+    m = height / width
+    b = 0
+
+    # Loop through x-coordinates
+    for x in range(width):
+        # Calculate y-coordinate
+        y = int(m * x + b)
+        # Print character at (x,y)
+        screen.addch(y, x, "*")
+
+    # Wait for user input
+    screen.getch()
+finally:
+    # Restore the terminal
+    curses.endwin()

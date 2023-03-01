@@ -31,4 +31,3 @@ The logic can be seen from the code
 def find_point(focal_length, point, z) :
     return (focal_length*point)/(focal_length+z)
 
-print(find_point(100, 50, 70))
