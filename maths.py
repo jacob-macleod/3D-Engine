@@ -5,7 +5,7 @@ import math
 r = xtan|180 - tan    |--------| | + p 
         \             \|c - p| / /  
 Basically, find the projected coordinate of a point
-"""
+This is the old version of the function
 
 def find_point(distance_between_screen_and_camera, point, z, camera_position) :
     d = distance_between_screen_and_camera - z
@@ -21,5 +21,14 @@ def find_point(distance_between_screen_and_camera, point, z, camera_position) :
     print (tan_theta_2)
     print((x * tan_theta_2))
     return (x * tan_theta_2) + point
+"""
 
-print(find_point(100, 20, 40, 30))
+"""
+New version of the function - much simpler!
+The logic can be seen from the code
+"""
+
+def find_point(focal_length, point, z) :
+    return (focal_length*point)/(focal_length+z)
+
+print(find_point(100, 50, 70))

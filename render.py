@@ -21,8 +21,6 @@ while True:
             quit()
     for j in range(0, 10) :
         i = 10-j
-        x = (-find_point(distance_between_screen_and_camera, 1, 5, 200+(100*i)))
-        y = (-find_point(distance_between_screen_and_camera, 170, 5, 200+(100*i)))
-        print (y)
-        pygame.draw.rect(gameDisplay, (255/i,20*i,0), (x,y,20,20))
+        x = find_point(100, 50, 10*j)
+        y = find_point(100, 60, 10*j)
     pygame.display.update()
