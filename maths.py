@@ -58,10 +58,6 @@ def draw_line(x1, y1, x2, y2, screen):
         for i in range(0, len(x_points)) :
 
                 y_point = round((gradient*x_points[i]) + y_intercept)
-                print ("Y: " + str(y_point))
-                print("X: " + str(x_points[i]))
+                screen.addch(y_point, x_points[i], "█")
 
-        print ("Y: " + str(y2))
-        print("X: " + str(x2))      
-
-draw_line(1,1, 3, 5, "screen")
+        screen.addch(y2, x2, '█')  

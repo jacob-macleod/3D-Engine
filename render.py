@@ -17,7 +17,7 @@ try :
     screen.addstr(10, 10, '█')
 
     
-    height, width = screen.getmaxyx()
+    """height, width = screen.getmaxyx()
 
     # Calculate slope and y-intercept
     m = height / width
@@ -28,7 +28,8 @@ try :
         # Calculate y-coordinate
         y = int(m * x + b)
         # Print character at (x,y)
-        screen.addch(y, x, "*")
+        screen.addch(y, x, "*")"""
+    draw_line(1,1, 7, 5, screen)
 
     # Wait for user input
     screen.getch()
