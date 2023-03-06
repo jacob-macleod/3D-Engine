@@ -41,23 +41,37 @@ From the equations, c = (-m*x1) + y1
 x2 and y2 can also be used
 """
 def draw_line(x1, y1, x2, y2, screen):
-        gradient = (y2-y1)/(x2-x1)
-        y_intercept = (-gradient*x1) + y1
-        y_points = []
+        lineDrawn = False
+        # If the gradient is not 0
+        if (x2-x1) != 0:
+                gradient = (y2-y1)/(x2-x1)
+        if (x2-x1) == 0:
+                # If the gradient is 0, just draw a vertical line
+                if y2 > y1:
+                        for i in range(y2-y1):
+                                screen.addch(x2+i, y2, "█")
 
-        # Get all x points in line
-        if x1 > x2 :
-                x_points = np.arange(x2, x1, 1)
-        else :
-                x_points = np.arange(x1, x2, 1)
+                else:
+                        for i in range(y1-y2):
+                                screen.addch(y2+i, x2, "█")
+               
+                lineDrawn = True
+               
+        if lineDrawn == False:
+                y_intercept = (-gradient*x1) + y1
+                y_points = []
 
-        print (x_points)
+                # Get all x points in line
+                if x1 > x2 :
+                        x_points = np.arange(x2, x1, 1)
+                else :
+                        x_points = np.arange(x1, x2, 1)
 
-        # Generate y points and plot
-        # Y points are generated from y = mx + c
-        for i in range(0, len(x_points)) :
+                # Generate y points and plot
+                # Y points are generated from y = mx + c
+                for i in range(0, len(x_points)) :
 
-                y_point = round((gradient*x_points[i]) + y_intercept)
-                screen.addch(y_point, x_points[i], "█")
+                        y_point = round((gradient*x_points[i]) + y_intercept)
+                        screen.addch(y_point, x_points[i], "█")
 
-        screen.addch(y2, x2, '█')  
+                screen.addch(y2, x2, '█')  
