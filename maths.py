@@ -41,7 +41,7 @@ m = (delta y)/delta x
 From the equations, c = (-m*x1) + y1
 x2 and y2 can also be used
 """
-def draw_line(x1, y1, x2, y2, screen):
+def draw_line_in_terminal(x1, y1, x2, y2, screen):
         lineDrawn = False
         # If the gradient is not 0
         if (x2-x1) != 0:
