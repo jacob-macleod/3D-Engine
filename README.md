@@ -8,7 +8,7 @@ Below, you can see the current work that I have:
 
 (Note that this is still very much a work in progress)
 
-<img src="icurrent_progress.png" alt="An image of what I have right now"/>
+<img src="current_progress.png" alt="An image of what I have right now"/>
 
 My next steps are to:
 * Improve the format of teh data required to draw 3D data, possible reading stl or obj file
