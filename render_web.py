@@ -1,11 +1,11 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
   
 app = Flask(__name__)
   
   
 @app.route('/', methods=['GET'])
 def main():
-    return "Hellow world"
+    return render_template("render.html")
   
   
 if __name__ == '__main__':
