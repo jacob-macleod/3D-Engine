@@ -1,7 +1,18 @@
+<!-- vscode-markdown-toc -->
+* 1. [Progress](#Progress)
+* 2. [File Explanation](#FileExplanation)
+* 3. [Mathematics](#Mathematics)
+
+<!-- vscode-markdown-toc-config
+	numbering=true
+	autoSave=true
+	/vscode-markdown-toc-config -->
+<!-- /vscode-markdown-toc -->
+
 # 3D-Engine
 A custom 3D engine made with python and JavaScript
 
-## Progress
+##  1. <a name='Progress'></a>Progress
 The MVP (minimum viable product) has now been created. This consists of the rendering of a wireframe of a cube, with some buttons to move it around. This code works for the online JavaScript renderer but not for the terminal renderer. This is because I was originally aiming to develop it for the terminal. However, the the terminal does not have good enough graphical detail. As a result, I have switched to an online renderer.
 
 Below, you can see the current work that I have:
@@ -16,7 +27,7 @@ My next steps are to:
 * Add more sophisticated rendering abilities
 * Add a better control system
 
-## File Explanation
+##  2. <a name='FileExplanation'></a>File Explanation
 Originally, I aimed to develop this for the terminal before realising this was infeasable. Therefore, I switched to a web based renderer using JavaScript. Therefore, some files are not out of date
 
 * Out of date files (from the old terminal renderer)
@@ -30,7 +41,7 @@ Originally, I aimed to develop this for the terminal before realising this was i
     * Everything in static folder - contains static content and JavaScript
 
 
-## Mathematics
+##  3. <a name='Mathematics'></a>Mathematics
 This 3D engine was originally based on some mathematics which I derived. Below, you can see the main equation, to find where a point should be based on a number of variables:
 
 * l = distance between screen and camera
