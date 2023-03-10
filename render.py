@@ -7,31 +7,34 @@ screen = curses.initscr()
 
 cube = [
     #x, y, z
-    (1, 0, 0),   # Front bottom-left corner
-    (4, 0, 0),   # Front bottom-right corner
+    (6, 2, 2),   # Front bottom-left corner
+    (9, 2, 2),   # Front bottom-right corner
 
-    (4, 4, 0),   # Front top-right corner
-    (1, 4, 0),   # Front top-left corner
+    (9, 6, 2),   # Front top-right corner
+    (8, 6, 2),   # Front top-left corner
 
-    (4, 4, 0),   # Front top-right corner
-    (4, 0, 0),   # Front bottom-right corner
+    (9, 6, 2),   # Front top-right corner
+    (9, 2, 2),   # Front bottom-right corner
 
-    (1, 4, 0),   # Front top-left corner
-    (1, 0, 0),   # Front bottom-left corner
+    (6, 6, 2),   # Front top-left corner
+    (6, 2, 2),   # Front bottom-left corner
 
+    (6, 2, 6),   # Back bottom-left corner
+    (9, 2, 6),   # Back bottom-right corner
 
-    (1, 0, 4),   # Back bottom-left corner
-    (4, 0, 4),   # Back bottom-right corner
+    (9, 6, 6),   # Back top-right corner
+    (6, 6, 6),   # Back top-left corner
 
-    (4, 4, 4),   # Back top-right corner
-    (1, 4, 4),   # Back top-left corner
+    (9, 6, 6),   # Back top-right corner
+    (9, 2, 6),   # Back bottom-right corner
 
-    (4, 4, 4),   # Back top-right corner
-    (4, 0, 4),   # Back bottom-right corner
-
-    (1, 0, 4),   # Back bottom-left corner
-    (1, 4, 4),   # Back top-left corner
+    (6, 6, 6),   # Back top-left corner
+    (6, 2, 6),   # Back bottom-left corner
 ]
+
+
+
+focal_length = 10
 
 try :
     # Set up the page
@@ -53,12 +56,11 @@ try :
             # Draw the line
             x1, y1, z1 = cube[i]
             x2, y2, z2 = cube[i+1]
-            #print ("VALUES")
-            #print (x1)
-            #print (y1)
-            #print (x2)
-            #print (y2)
-            #print ("--------")
+
+            x1 = find_point(focal_length, x1, z1)
+            y1 = find_point(focal_length, y1, z1)
+            x2 = find_point(focal_length, x2, z2)
+            y2 = find_point(focal_length, y2, z2)
             draw_line(x1, y1, x2, y2, screen)
 
 

@@ -31,7 +31,8 @@ The logic can be seen from the code
 """
 
 def find_point(focal_length, point, z) :
-    return (focal_length*point)/(focal_length+z)
+    new_point = int(focal_length*point)/(focal_length+z)
+    return int(new_point)
 
 # Draw a diagonal line between two points
 """
