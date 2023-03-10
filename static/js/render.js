@@ -132,3 +132,29 @@ function move_vertically(num_of_steps) {
     // Redraw the cube
     render_cube()
 }
+
+// Increment all z coords in the array by num_of_steps
+function move_in_z_axis(num_of_steps) {
+    newArr = []
+    coords = []
+
+    for (i=0;i<(cube.length); i++) {
+        coords = cube[i].split(",")
+        // Convert the x coord to a number, add num_of_steps to it, and turn it back into a string
+        new_coordinate = parseInt(coords[2])
+        new_coordinate = new_coordinate + num_of_steps
+        coords[2] = (new_coordinate).toString()
+        line = coords[0] + "," + coords[1] + "," + coords[2]
+        newArr.push(line)
+    }
+
+    // Clear canvas
+    ctx.fillStyle = "#FFFFFF";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.beginPath();
+
+    cube = newArr
+
+    // Redraw the cube
+    render_cube()
+}
