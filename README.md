@@ -1,5 +1,34 @@
 # 3D-Engine
-A custom 3D engine made with python
+A custom 3D engine made with python and JavaScript
+
+## Progress
+The MVP (minimum viable product) has now been created. This consists of the rendering of a wireframe of a cube, with some buttons to move it around. This code works for the online JavaScript renderer but not for the terminal renderer. This is because I was originally aiming to develop it for the terminal. However, the the terminal does not have good enough graphical detail. As a result, I have switched to an online renderer.
+
+Below, you can see the current work that I have:
+
+(Note that this is still very much a work in progress)
+
+<img src="icurrent_progress.png" alt="An image of what I have right now"/>
+
+My next steps are to:
+* Improve the format of teh data required to draw 3D data, possible reading stl or obj file
+* Add rotation
+* Add more sophisticated rendering abilities
+* Add a better control system
+
+## File Explanation
+Originally, I aimed to develop this for the terminal before realising this was infeasable. Therefore, I switched to a web based renderer using JavaScript. Therefore, some files are not out of date
+
+* Out of date files (from the old terminal renderer)
+    * render_terminal.py - renders the graphics onto the terminal
+    * maths.py - The maths used, in Python
+    * pygame_setup.py - From when I was testing it in pygame
+
+* Current files (for the JavaScript renderer)
+    * render_web.py - loads the web page as a web server, for use with github codespaces
+    * Everything in templates folder - contains HTML files
+    * Everything in static folder - contains static content and JavaScript
+
 
 ## Mathematics
 This 3D engine was originally based on some mathematics which I derived. Below, you can see the main equation, to find where a point should be based on a number of variables:
