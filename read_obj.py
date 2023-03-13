@@ -32,4 +32,3 @@ def read_obj(file) :
     data.append(faces)
     return data
 
-print (read_obj("example_file.obj"))
