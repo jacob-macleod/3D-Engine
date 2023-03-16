@@ -12,7 +12,7 @@ function find_point(focal_length, point, z) {
 // Lines are drawn between each block of two
 // SO this essentially defines the vertices
 // This seems like a horribly inefficient way to do define it, so I need to research alternatives
-cube = [
+/*cube = [
     //x, y, z
     "60,20,20",   // Front bottom-left corner
     "90,20,20",   // Front bottom-right corner
@@ -49,7 +49,32 @@ cube = [
 
     "90,20,20",   // Front bottom-right corner
     "90,20,60",   // Back bottom-right corner
-]
+]*/
+
+cube = []
+
+function create_cube_array() {
+	for (line=0;line<coords.length;line++) {
+		coordinate_pair = coords[line];
+		item_1 = coordinate_pair.split("#")[0];
+		item_2 = coordinate_pair.split("#")[1];
+		
+		// The coordinate is encapsulated with [], so we need to remove it
+		item_1 = item_1.slice(1, -1);
+		item_2 = item_2.slice(1, -1);
+
+		// The coordinates also have spaces, so we need to remove them
+		item_1 = item_1.replace(/\s/g, "");
+		item_2 = item_2.replace(/\s/g, "");
+		
+		// Add the item to the array
+		cube.push(item_1)
+		cube.push(item_2)
+	}
+}
+
+create_cube_array();
+
 
 function render_cube() {
     // Draw the cube
@@ -83,6 +108,7 @@ render_cube()
 
 // Increment all x coords in the array by num_of_steps
 function move_horizontally(num_of_steps) {
+    console.log(cube)
     newArr = []
     coords = []
 
@@ -105,6 +131,7 @@ function move_horizontally(num_of_steps) {
 
     // Redraw the cube
     render_cube()
+    console.log(cube)
 }
 
 // Increment all y coords in the array by num_of_steps
@@ -135,16 +162,17 @@ function move_vertically(num_of_steps) {
 
 // Increment all z coords in the array by num_of_steps
 function move_in_z_axis(num_of_steps) {
+    console.log(cube);
     newArr = []
     coords = []
 
     for (i=0;i<(cube.length); i++) {
-        coords = cube[i].split(",")
+        coords = cube[i].split(",");
         // Convert the x coord to a number, add num_of_steps to it, and turn it back into a string
-        new_coordinate = parseInt(coords[2])
-        new_coordinate = new_coordinate + num_of_steps
-        coords[2] = (new_coordinate).toString()
-        line = coords[0] + "," + coords[1] + "," + coords[2]
+        new_coordinate = parseInt(coords[2]);
+        new_coordinate = new_coordinate + num_of_steps;
+        coords[2] = (new_coordinate).toString();
+        line = coords[0] + "," + coords[1] + "," + coords[2];
         newArr.push(line)
     }
 
@@ -153,8 +181,9 @@ function move_in_z_axis(num_of_steps) {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     ctx.beginPath();
 
-    cube = newArr
+    cube = newArr;
 
     // Redraw the cube
-    render_cube()
+    render_cube();
+    console.log(cube);
 }

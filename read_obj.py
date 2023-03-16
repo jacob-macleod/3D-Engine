@@ -32,3 +32,22 @@ def read_obj(file) :
     data.append(faces)
     return data
 
+
+def generate_coordinate_pairs(filename):
+    coordinate_pairs = []
+    with open(filename, 'r') as f:
+        vertices = []
+        for line in f:
+            if line.startswith('v'):
+                vertex = list(map(float, line.split()[1:]))
+                vertices.append(vertex)
+            elif line.startswith('f'):
+                indices = list(map(int, line.split()[1:]))
+                for i in range(len(indices)):
+                    start = indices[i]
+                    end = indices[(i+1)%len(indices)]
+                    coordinate_pairs.append(f"{vertices[start-1]}#{vertices[end-1]}")
+    return coordinate_pairs
+
+
+

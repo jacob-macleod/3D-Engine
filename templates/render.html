@@ -16,6 +16,10 @@ Your browser does not support the canvas element.
 <button onclick="move_in_z_axis(-5)">Move Forward</button>
 <button onclick="move_in_z_axis(5)">Move Backwards</button>
 </body>
+<script>
+	coords = {{ coords|tojson }};
+	console.log(coords);
+</script>
 <script src="/static/js/render.js"></script>
 </html>
 
